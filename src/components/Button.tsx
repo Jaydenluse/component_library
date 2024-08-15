@@ -1,22 +1,26 @@
 import React from 'react';
+import './button.css'; 
 
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary';
+  size?: 'small' | 'medium' | 'large';
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary' }) => {
-  const baseStyles = 'px-4 py-2 rounded-md transition duration-300 ease-in-out';
-  const variantStyles = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600',
-    secondary: 'bg-gray-500 text-white hover:bg-gray-600',
-    outline: 'border border-blue-500 text-blue-500 hover:bg-blue-50',
-  };
+export const Button: React.FC<ButtonProps> = ({ 
+  children, 
+  onClick, 
+  variant = 'primary', 
+  size = 'medium' 
+}) => {
+  const baseClass = 'storybook-button';
+  const variantClass = `storybook-button--${variant}`;
+  const sizeClass = `storybook-button--${size}`;
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]}`}
+      className={`${baseClass} ${variantClass} ${sizeClass}`}
       onClick={onClick}
     >
       {children}

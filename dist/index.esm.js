@@ -1,14 +1,11 @@
 import React from 'react';
 
 var Button = function (_a) {
-    var children = _a.children, onClick = _a.onClick, _b = _a.variant, variant = _b === void 0 ? 'primary' : _b;
-    var baseStyles = 'px-4 py-2 rounded-md transition duration-300 ease-in-out';
-    var variantStyles = {
-        primary: 'bg-blue-500 text-white hover:bg-blue-600',
-        secondary: 'bg-gray-500 text-white hover:bg-gray-600',
-        outline: 'border border-blue-500 text-blue-500 hover:bg-blue-50',
-    };
-    return (React.createElement("button", { className: "".concat(baseStyles, " ").concat(variantStyles[variant]), onClick: onClick }, children));
+    var children = _a.children, onClick = _a.onClick, _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, _c = _a.size, size = _c === void 0 ? 'medium' : _c;
+    var baseClass = 'storybook-button';
+    var variantClass = "storybook-button--".concat(variant);
+    var sizeClass = "storybook-button--".concat(size);
+    return (React.createElement("button", { className: "".concat(baseClass, " ").concat(variantClass, " ").concat(sizeClass), onClick: onClick }, children));
 };
 
 var Card = function (_a) {

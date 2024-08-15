@@ -24,6 +24,7 @@ export default {
     commonjs(),
     typescript({ tsconfig: './tsconfig.json' }),
     postcss({
+      extract: 'styles.css',
       config: {
         path: './postcss.config.js',
       },
